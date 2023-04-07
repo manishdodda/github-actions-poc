@@ -1,0 +1,33 @@
+name: GitHub Actions AWS OIDC Checking
+
+run-name: ${{ github.actor }} is testing out GitHub Actions
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read  # This is required for actions/checkout
+
+jobs:
+  Explore-AWS-OIDC:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+ 
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: eu-west-1
+          role-to-assume: ${{ secrets.DEV_DEPLOY_ROLE }}
+          role-session-name: OIDCSession
+
+      - name: Checking AWS Connections
+        run: |
+          ls -la
+          # SAM CLI Testing
+          aws s3 ls
+        shell: bash
