@@ -30,4 +30,6 @@ jobs:
           ls -la
           # SAM CLI Testing
           aws s3 ls
+          echo "Deploying Application for Hello World"
+          sam deploy -t template.yaml --s3-bucket aws-sam-cli-managed-default-samclisourcebucket-oy9x389jls48 --capabilities CAPABILITY_NAMED_IAM
         shell: bash
