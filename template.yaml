@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Template to Test Github Actions
+Globals:
+  Function:
+    Tags:
+      PrimaryOwner: "christopher.wheaton@pfizer.com"
+      SecondaryOwner: "dimosthenis.chatzopoulos@pfizer.com"
+      CostCenterID: "2320613"
+  
+Resources:
+
+  CUSPFEEvents:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: hello_world/
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.9
+      Role: arn:aws:iam::638200722556:role/CUSPFE-ConnectMetricsRole
+      Timeout: 900
+    Metadata:
+      SamResourceId: CUSPFEEvents
