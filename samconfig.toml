@@ -4,7 +4,7 @@ stack_name = "CUSPFE-sfdi-githubactions-poc"
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-oy9x389jls48"
 s3_prefix = "CUSPFE-sfdi-githubactions-poc"
 region = "us-east-1"
-confirm_changeset = true
+confirm_changeset = false
 capabilities = "CAPABILITY_NAMED_IAM"
 tags = "CostCenterID=\"2320613\" SecondaryOwner=\"dimosthenis.chatzopoulos@pfizer.com\" PrimaryOwner=\"christopher.wheaton@pfizer.com\""
 image_repositories = []

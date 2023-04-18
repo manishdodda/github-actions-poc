@@ -31,5 +31,5 @@ jobs:
           # SAM CLI Testing
           aws s3 ls
           echo "Deploying Application for Hello World"
-          sam deploy -t template.yaml --config-file samconfig.toml --confirm-changeset
+          sam deploy -t template.yaml --config-file samconfig.toml
         shell: bash
