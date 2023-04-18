@@ -5,7 +5,7 @@ import json
 
 def lambda_handler(event, context):
     
-    print("Hello Github Actions - Demo1")
+    print("Hello Github Actions - Demo2")
     return {
         "statusCode": 200
     }
